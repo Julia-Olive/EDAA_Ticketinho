@@ -202,20 +202,21 @@ O diferencial do projeto está na implementação manual das estruturas estudada
 ---
 
 # 🔄 Fluxo de Funcionamento
-
-```mermaid
-flowchart LR
-
-A[Chamado Aberto]
---> B[Fila de Atendimento]
-
-B --> C[Em Atendimento]
-
-C --> D[Resolvido]
-C --> E[Cancelado]
-
-D --> F[Histórico]
-E --> F[Histórico]
+```text
+Novo Chamado
+      │
+      ▼
+Fila de Atendimento
+      │
+      ▼
+Em Atendimento
+   ├──────────► Resolvido
+   │                 │
+   │                 ▼
+   └──────────► Histórico
+                     ▲
+                     │
+             Cancelado
 ```
 
 ### 1️⃣ Abertura
